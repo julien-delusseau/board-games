@@ -8,7 +8,7 @@ Dans un terminal, lancer la commande `git clone [url du repo] nom_du_projet`.
 
 ### `npm install`
 
-Une fois le projet ouvert dans un éditeur de code
+Une fois le projet ouvert dans un éditeur de code\
 Ouvrir un terminal et lancer la commande `npm install` pour installer les dépendances.
 
 ### `npm start`
