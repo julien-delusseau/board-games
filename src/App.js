@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import {Fragment, useState} from "react";
 import './App.css';
+import DicesGame from "./games/DicesGame";
+import RockPaperScissorsGame from "./games/RockPaperScissorsGame";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const [game, setGame] = useState()
+    return (
+        <Fragment>
+            <h1>Board Games</h1>
+            <main>
+                {
+                    game === 'dice' ? <DicesGame/> : game === 'rps' ? <RockPaperScissorsGame/> : (
+                        <section className={"choose"}>
+                            <h2>Choisissez votre jeu:</h2>
+                            <button onClick={() => setGame('dice')}>Jeu du dé</button>
+                            <button onClick={() => setGame('rps')}>Pierre Feuille Ciseaux</button>
+                        </section>
+                    )
+                }
+            </main>
+            <footer>
+                <p onClick={() => setGame(null)}>Retour</p>
+            </footer>
+        </Fragment>
+    )
 }
 
 export default App;
